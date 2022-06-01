@@ -12,18 +12,17 @@ public final class Even implements Game {
     private static final int MAX_RANGE = 100;
     private static final int ROUND_COUNT = 3;
 
-    public void play() {
+    public void play(String name) {
         int question;
         String answer;
-        String name = Cli.greetings();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner in = new Scanner(System.in);
         for (int i = 0; i < ROUND_COUNT; i++) {
             question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            System.out.printf("Question: %d", question);
+            System.out.printf("Question: %d \n", question);
             System.out.println("Your answer: ");
             answer = in.nextLine();
-            if ((question % 2 == 0 && answer.equals("yes")) || (question % 2 == 1 && answer.equals("no"))) {
+            if ((question % 2 == 0 && answer.toLowerCase().equals("yes")) || (question % 2 == 1 && answer.toLowerCase().equals("no"))) {
                 System.out.println("Correct!");
             } else {
                 System.out.printf("Let's try again, %s \n", name);

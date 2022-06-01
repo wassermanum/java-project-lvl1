@@ -1,5 +1,5 @@
 package hexlet.code;
 
 public interface Game {
-    void play();
+    void play(String name);
 }
