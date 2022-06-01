@@ -5,4 +5,5 @@
 
 [![Java CI](https://github.com/wassermanum/java-project-lvl1/actions/workflows/build.yaml/badge.svg)](https://github.com/wassermanum/java-project-lvl1/actions/workflows/build.yaml)
 
-https://asciinema.org/a/8UmcgCwuGjEOpc0o8VOemA6lX
+https://asciinema.org/a/EuPlHWw55EcTuJQdiI5P3VNhF
+

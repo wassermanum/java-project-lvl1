@@ -10,11 +10,11 @@ import java.util.function.Supplier;
 public class App {
     public static void main(String[] args) {
         System.out.println("Welcome to the Brain Games!");
-        String name = Cli.greetings();
         Map<Integer, Supplier<? extends Game>> map = Map.of(
                 0, () -> new Greeting(),
                 1, () -> new Even()
         );
+        System.out.println("Please enter the game number and press Enter.");
         System.out.println("0. Greeting.");
         System.out.println("1. Even.");
         System.out.println("Your choose: ");
@@ -23,7 +23,7 @@ public class App {
         if (ctor == null) {
             System.out.println("No such game");
         } else {
-            ctor.get().play(name);
+            ctor.get().play();
         }
     }
 }
