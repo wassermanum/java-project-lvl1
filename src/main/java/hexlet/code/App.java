@@ -20,6 +20,10 @@ public class App {
         System.out.println("Your choose: ");
         Scanner in = new Scanner(System.in);
         Supplier<? extends Game> ctor = map.get(in.nextInt());
-        ctor.get().play(name);
+        if (ctor == null) {
+            System.out.println("No such game");
+        } else {
+            ctor.get().play(name);
+        }
     }
 }

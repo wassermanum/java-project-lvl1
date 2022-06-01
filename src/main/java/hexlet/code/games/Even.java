@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Game;
-
 import java.util.Scanner;
 
 
@@ -22,7 +20,10 @@ public final class Even implements Game {
             System.out.printf("Question: %d \n", question);
             System.out.println("Your answer: ");
             answer = in.nextLine();
-            if ((question % 2 == 0 && answer.toLowerCase().equals("yes")) || (question % 2 == 1 && answer.toLowerCase().equals("no"))) {
+            if (
+                    (question % 2 == 0 && answer.toLowerCase().equals("yes"))
+                    || (question % 2 == 1 && answer.toLowerCase().equals("no"))
+            ) {
                 System.out.println("Correct!");
             } else {
                 System.out.printf("Let's try again, %s \n", name);
