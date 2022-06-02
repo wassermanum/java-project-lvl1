@@ -21,20 +21,18 @@ public final class Calculator implements Game {
         for (int i = 0; i < ROUND_COUNT; i++) {
             int firstValue = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
             int secondValue = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            question = String.valueOf(
-                    firstValue
-                            + " "
-                            + OPERATORS[(int) (Math.random() * OPERATORS.length)]
-                            + " "
-                            + secondValue
-            );
+            question = firstValue
+                    + " "
+                    + OPERATORS[(int) (Math.random() * OPERATORS.length)]
+                    + " "
+                    + secondValue;
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             answer = in.nextInt();
             if (answer == eval.evaluate(question).intValue()) {
                 System.out.println("Correct!");
             } else {
-                System.out.printf("'%d' is wrong answer ;(. Correct answer was '%d'\n.",
+                System.out.printf("'%d' is wrong answer ;(. Correct answer was '%d'.\n",
                         answer,
                         eval.evaluate(question).intValue()
                 );
