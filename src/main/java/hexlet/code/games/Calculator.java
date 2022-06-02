@@ -10,10 +10,8 @@ public final class Calculator implements Game {
     private static final int MIN_RANGE = 0;
     private static final int MAX_RANGE = 100;
     private static final int ROUND_COUNT = 3;
-    private int firstValue;
-    private int secondValue;
+
     public void play() {
-        char[] operators = {'+', '-', '*'};
         DoubleEvaluator eval = new DoubleEvaluator();
         Scanner in = new Scanner(System.in);
         int answer;
@@ -21,17 +19,17 @@ public final class Calculator implements Game {
         String name = Cli.greetings();
         System.out.println("What is the result of the expression?");
         for (int i = 0; i < ROUND_COUNT; i++) {
-            firstValue = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            secondValue = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
+            int firstValue = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
+            int secondValue = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
             question = String.valueOf(
                     firstValue
                             + " "
-                            + operators[(int) (Math.random() * operators.length)]
+                            + OPERATORS[(int) (Math.random() * OPERATORS.length)]
                             + " "
                             + secondValue
             );
             System.out.println("Question: " + question);
-            System.out.printf("Your answer: ");
+            System.out.print("Your answer: ");
             answer = in.nextInt();
             if (answer == eval.evaluate(question).intValue()) {
                 System.out.println("Correct!");

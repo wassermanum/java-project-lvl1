@@ -19,7 +19,7 @@ public final class Even implements Game {
         for (int i = 0; i < ROUND_COUNT; i++) {
             question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
             System.out.printf("Question: %d \n", question);
-            System.out.println("Your answer: ");
+            System.out.print("Your answer: ");
             answer = in.nextLine();
             if (
                     (question % 2 == 0 && answer.toLowerCase().equals("yes"))
