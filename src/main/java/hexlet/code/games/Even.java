@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public final class Even implements Game {
     private static final int MIN_RANGE = 0;
-    //Максимальн
     private static final int MAX_RANGE = 100;
     private static final int ROUND_COUNT = 3;
 
@@ -31,7 +30,9 @@ public final class Even implements Game {
                 System.out.printf("Let's try again, %s! \n", name);
                 break;
             }
-            System.out.printf("Congratulations, %s! \n", name);
+            if (i == ROUND_COUNT - 1) {
+                System.out.printf("Congratulations, %s! \n", name);
+            }
         }
     }
 }
