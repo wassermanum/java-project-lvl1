@@ -18,7 +18,7 @@ public class Engine {
                 System.out.println("Correct!");
             }
             if (i == questions.size() - 1) {
-                System.out.printf("Congratulations, %s\n!", name);
+                System.out.printf("Congratulations, %s!\n", name);
             }
         }
     }

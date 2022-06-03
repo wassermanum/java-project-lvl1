@@ -14,7 +14,7 @@ public final class Even implements Game {
     private static final int ROUND_COUNT = 3;
 
     public void play() {
-        Integer question;
+        int question;
         String name = Cli.greetings();
         List<String> questions = new ArrayList<>();
         List<String> answers = new ArrayList<>();
@@ -22,7 +22,7 @@ public final class Even implements Game {
         Scanner in = new Scanner(System.in);
         for (int i = 0; i < ROUND_COUNT; i++) {
             question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            questions.add(question.toString());
+            questions.add(Integer.toString(question));
             if (question % 2 == 0) {
                 answers.add("yes");
             } else {

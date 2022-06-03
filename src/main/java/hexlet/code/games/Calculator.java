@@ -17,7 +17,7 @@ public final class Calculator implements Game {
         DoubleEvaluator eval = new DoubleEvaluator();
         List<String> questions = new ArrayList<>();
         List<String> answers = new ArrayList<>();
-        Integer userAnswer;
+        int userAnswer;
         String name = Cli.greetings();
         System.out.println("What is the result of the expression?");
         for (int i = 0; i < ROUND_COUNT; i++) {
@@ -30,7 +30,7 @@ public final class Calculator implements Game {
                     + secondValue;
             userAnswer = eval.evaluate(question).intValue();
             questions.add(question);
-            answers.add(userAnswer.toString());
+            answers.add(Integer.toString(userAnswer));
         }
         Engine.runGame(questions, answers, name);
     }
