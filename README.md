@@ -5,5 +5,11 @@
 
 [![Java CI](https://github.com/wassermanum/java-project-lvl1/actions/workflows/build.yaml/badge.svg)](https://github.com/wassermanum/java-project-lvl1/actions/workflows/build.yaml)
 
-https://asciinema.org/a/EuPlHWw55EcTuJQdiI5P3VNhF
+[Even game](https://asciinema.org/a/o6n4li0uhnceUBM7l5KbOSXcY)
+
+[Calc game](https://asciinema.org/a/MU6F4azTj3oO70W7Gu3OUgc4W)
+
+[GCD game](https://asciinema.org/a/41s4qeAP0QRjk26ddA8TkrEVl)
+
+[Progression game](https://asciinema.org/a/5WLUpGLmrDKpQID81dv8vX4ZQ)
 
