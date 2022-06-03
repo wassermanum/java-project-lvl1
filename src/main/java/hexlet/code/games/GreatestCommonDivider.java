@@ -1,7 +1,9 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 import hexlet.code.Game;
+import hexlet.code.GameUtils;
 
 import java.util.ArrayList;
 import java.util.List;
