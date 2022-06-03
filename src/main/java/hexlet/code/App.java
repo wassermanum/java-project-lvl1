@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calculator;
-import hexlet.code.games.Even;
-import hexlet.code.games.Exit;
-import hexlet.code.games.Greeting;
+import hexlet.code.games.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -16,11 +13,14 @@ public class App {
                 () -> new Exit(),
                 () -> new Greeting(),
                 () -> new Even(),
-                () -> new Calculator());
+                () -> new Calculator(),
+                () -> new GreatestCommonDivider()
+        );
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1. Greeting.");
         System.out.println("2. Even.");
         System.out.println("3. Calculator.");
+        System.out.println("4. GCD.");
         System.out.println("0. Exit.");
         System.out.print("Your choose: ");
         Scanner in = new Scanner(System.in);
