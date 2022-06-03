@@ -2,6 +2,9 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 import hexlet.code.Game;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -11,28 +14,21 @@ public final class Even implements Game {
     private static final int ROUND_COUNT = 3;
 
     public void play() {
-        int question;
-        String answer;
+        Integer question;
         String name = Cli.greetings();
+        List<String> questions = new ArrayList<>();
+        List<String> answers = new ArrayList<>();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner in = new Scanner(System.in);
         for (int i = 0; i < ROUND_COUNT; i++) {
             question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            System.out.printf("Question: %d \n", question);
-            System.out.print("Your answer: ");
-            answer = in.nextLine();
-            if (
-                    (question % 2 == 0 && answer.toLowerCase().equals("yes"))
-                    || (question % 2 == 1 && answer.toLowerCase().equals("no"))
-            ) {
-                System.out.println("Correct!");
+            questions.add(question.toString());
+            if (question % 2 == 0) {
+                answers.add("yes");
             } else {
-                System.out.printf("Let's try again, %s! \n", name);
-                break;
-            }
-            if (i == ROUND_COUNT - 1) {
-                System.out.printf("Congratulations, %s! \n", name);
+                answers.add("no");
             }
         }
+        Engine.runGame(questions, answers, name);
     }
 }

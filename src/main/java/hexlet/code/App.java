@@ -1,6 +1,12 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+
+
+import hexlet.code.games.Calculator;
+import hexlet.code.games.Even;
+import hexlet.code.games.Exit;
+import hexlet.code.games.Greeting;
+import hexlet.code.games.GreatestCommonDivider;
 
 import java.util.List;
 import java.util.Scanner;
@@ -10,11 +16,11 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Welcome to the Brain Games!");
         List<Supplier<? extends  Game>> list = List.of(
-                () -> new Exit(),
-                () -> new Greeting(),
-                () -> new Even(),
-                () -> new Calculator(),
-                () -> new GreatestCommonDivider()
+                Exit::new,
+                Greeting::new,
+                Even::new,
+                Calculator::new,
+                GreatestCommonDivider::new
         );
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1. Greeting.");
