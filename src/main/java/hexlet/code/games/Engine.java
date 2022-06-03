@@ -32,7 +32,8 @@ public final class Engine {
                 Even::new,
                 Calculator::new,
                 GreatestCommonDivider::new,
-                Progression::new
+                Progression::new,
+                Prime::new
         );
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1. Greeting.");
@@ -40,6 +41,7 @@ public final class Engine {
         System.out.println("3. Calculator.");
         System.out.println("4. GCD.");
         System.out.println("5. Progression.");
+        System.out.println("6. Prime.");
         System.out.println("0. Exit.");
         System.out.print("Your choose: ");
         Scanner in = new Scanner(System.in);

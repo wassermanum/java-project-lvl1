@@ -13,3 +13,5 @@
 
 [Progression game](https://asciinema.org/a/5WLUpGLmrDKpQID81dv8vX4ZQ)
 
+[Prime game](https://asciinema.org/a/wGIeULMOvhdtO8AsMUFwDVfES)
+
