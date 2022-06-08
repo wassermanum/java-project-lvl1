@@ -10,23 +10,25 @@ public final class Engine {
         Scanner in = new Scanner(System.in);
         String name = Cli.greetings();
         System.out.println(rules);
-        for (int i = 0; i < gameData.size(); i++) {
-            System.out.printf("Question: %s\n", gameData.get(i).getQuestion());
+        boolean success = true;
+        for (QuestionAnswerPair pair : gameData) {
+            System.out.printf("Question: %s\n", pair.getQuestion());
             System.out.print("Your answer: ");
             String userAnswer = in.nextLine();
-            if (!gameData.get(i).getAnswer().equalsIgnoreCase(userAnswer)) {
+            if (!pair.getAnswer().equalsIgnoreCase(userAnswer)) {
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n",
                         userAnswer,
-                        gameData.get(i).getAnswer()
+                        pair.getAnswer()
                 );
                 System.out.printf("Let's try again, %s!\n", name);
+                success = false;
                 break;
             } else {
                 System.out.println("Correct!");
             }
-            if (i == gameData.size() - 1) {
-                System.out.printf("Congratulations, %s!\n", name);
-            }
+        }
+        if (success) {
+            System.out.printf("Congratulations, %s!\n", name);
         }
     }
 }
