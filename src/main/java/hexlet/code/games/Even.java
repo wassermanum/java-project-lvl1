@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Game;
 import hexlet.code.GameUtils;
@@ -13,24 +12,24 @@ import java.util.Scanner;
 public final class Even implements Game {
     private static final int MIN_RANGE = 0;
     private static final int MAX_RANGE = 100;
-    private static final int ROUND_COUNT = 3;
+    private static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public void play() {
         int question;
-        String name = Cli.greetings();
+        String answer;
+        List<QuestionAnswerPair> gameData = new ArrayList<>();
         List<String> questions = new ArrayList<>();
-        List<String> answers = new ArrayList<>();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner in = new Scanner(System.in);
-        for (int i = 0; i < ROUND_COUNT; i++) {
+        for (int i = 0; i < GameUtils.ROUNDS; i++) {
             question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
             questions.add(Integer.toString(question));
             if (question % 2 == 0) {
-                answers.add("yes");
+                answer = "yes";
             } else {
-                answers.add("no");
+                answer = "no";
             }
+            gameData.add(new QuestionAnswerPair(Integer.toString(question), answer));
         }
-        Engine.runGame(questions, answers, name);
+        Engine.runGame(gameData, RULES);
     }
 }

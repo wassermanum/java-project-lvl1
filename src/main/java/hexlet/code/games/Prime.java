@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Game;
 import hexlet.code.GameUtils;
@@ -11,22 +10,20 @@ import java.util.List;
 public final class Prime implements Game {
     private static final int MIN_RANGE = 2;
     private static final int MAX_RANGE = 100;
-    private static final int ROUND_COUNT = 3;
+    private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public void play() {
-        String name = Cli.greetings();
-        List<String> questions = new ArrayList<>();
-        List<String> answers = new ArrayList<>();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        List<QuestionAnswerPair> gameData = new ArrayList<>();
         int question;
-        for (int i = 0; i < ROUND_COUNT; i++) {
+        String answer;
+        for (int i = 0; i < GameUtils.ROUNDS; i++) {
             question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            questions.add(Integer.toString(question));
             if (GameUtils.checkIsPrime(question)) {
-                answers.add("yes");
+                answer = "yes";
             } else {
-                answers.add("no");
+                answer = "no";
             }
+            gameData.add(new QuestionAnswerPair(Integer.toString(question), answer));
         }
-        Engine.runGame(questions, answers, name);
+        Engine.runGame(gameData, RULES);
     }
 }
