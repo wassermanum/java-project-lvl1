@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/wassermanum/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/wassermanum/java-project-lvl1/actions)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7f2163f9ae7564f966f2/maintainability)](https://codeclimate.com/github/wassermanum/java-project-lvl1/maintainability)
 
 [![Java CI](https://github.com/wassermanum/java-project-lvl1/actions/workflows/build.yaml/badge.svg)](https://github.com/wassermanum/java-project-lvl1/actions/workflows/build.yaml)
 
