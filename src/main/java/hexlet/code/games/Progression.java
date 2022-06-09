@@ -16,23 +16,20 @@ public final class Progression implements Game {
     private static final String RULES = "What number is missing in the progression?";
     public void play() {
         List<QuestionAnswerPair> gameData = new ArrayList<>();
-        String answer = null;
+        String answer;
         for (int i = 0; i < GameUtils.ROUNDS; i++) {
             int progressionElement = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
             int elementsAmount = GameUtils.getRandomNumber(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
-            int questionPosition = GameUtils.getRandomNumber(0, elementsAmount);
             int progressionStep = GameUtils.getRandomNumber(1, MAX_PROGRESSION_STEP);
-            StringBuilder question = new StringBuilder();
+            int questionNumber = GameUtils.getRandomNumber(0, elementsAmount);
+            List<String> question = new ArrayList<>();
             for (int j = 0; j < elementsAmount; j++) {
-                if (j != questionPosition) {
-                    question.append(progressionElement).append(" ");
-                } else {
-                    question.append(".. ");
-                    answer = Integer.toString(progressionElement);
-                }
+                question.add(Integer.toString(progressionElement));
                 progressionElement += progressionStep;
             }
-            gameData.add(new QuestionAnswerPair(question.toString(), answer));
+            answer = question.get(questionNumber);
+            question.set(questionNumber, "..");
+            gameData.add(new QuestionAnswerPair(String.join(" ", question), answer));
         }
         Engine.runGame(gameData, RULES);
     }
