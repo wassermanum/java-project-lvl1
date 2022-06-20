@@ -18,11 +18,7 @@ public final class Prime implements Game {
         String answer;
         for (int i = 0; i < GameUtils.ROUNDS; i++) {
             question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            if (GameUtils.checkIsPrime(question)) {
-                answer = "yes";
-            } else {
-                answer = "no";
-            }
+            answer = GameUtils.checkIsPrime(question);
             gameData.add(new QuestionAnswerPair(Integer.toString(question), answer));
         }
         Engine.runGame(gameData, RULES);

@@ -24,10 +24,11 @@ public final class Progression implements Game {
             int progressionStep = GameUtils.getRandomNumber(1, MAX_PROGRESSION_STEP);
             int questionNumber = GameUtils.getRandomNumber(0, elementsAmount);
             List<String> question = new ArrayList<>();
-            for (int j = 0; j < elementsAmount; j++) {
+            /*for (int j = 0; j < elementsAmount; j++) {
                 question.add(Integer.toString(progressionElement));
                 progressionElement += progressionStep;
-            }
+            }*/
+            question = GameUtils.generateProgression(elementsAmount, progressionElement, progressionStep);
             answer = question.get(questionNumber);
             question.set(questionNumber, "..");
             gameData.add(new QuestionAnswerPair(String.join(" ", question), answer));

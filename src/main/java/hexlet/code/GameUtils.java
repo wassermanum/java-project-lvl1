@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class GameUtils {
@@ -16,16 +18,24 @@ public class GameUtils {
         }
         return greatCommonDivider(value2, value1 % value2);
     }
-    public static boolean checkIsPrime(int value) {
-        boolean isPrime = true;
+    public static String checkIsPrime(int value) {
+        String isPrime = "yes";
         int temp;
         for (int i = 2; i < value / 2; i++) {
             temp = value % i;
             if (temp == 0) {
-                isPrime = false;
+                isPrime = "no";
                 break;
             }
         }
         return isPrime;
+    }
+    public static List<String> generateProgression(int elementsQuantity, int initialElement, int progressionStep) {
+        List<String> progression = new ArrayList<>();
+        for (int i = 0; i < elementsQuantity; i++) {
+            progression.add(Integer.toString(initialElement));
+            initialElement += progressionStep;
+        }
+        return progression;
     }
 }
