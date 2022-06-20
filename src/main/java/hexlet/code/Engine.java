@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.QuestionAnswerPair;
+import hexlet.code.domain.QuestionAnswerPair;
 
 import java.util.List;
 import java.util.Scanner;
