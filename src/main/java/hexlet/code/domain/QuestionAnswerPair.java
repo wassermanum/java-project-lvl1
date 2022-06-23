@@ -8,6 +8,7 @@ public final class QuestionAnswerPair {
         this.question = value1;
         this.answer = value2;
     }
+
     public String getQuestion() {
         return question;
     }
