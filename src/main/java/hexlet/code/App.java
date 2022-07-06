@@ -37,7 +37,7 @@ public class App {
             System.out.print(line);
         }
 
-        List<Supplier<? extends Game>> list = List.of(
+        List<Supplier<? extends Game>> games = List.of(
                 Exit::new,
                 Greeting::new,
                 Even::new,
@@ -50,12 +50,12 @@ public class App {
         Scanner in = new Scanner(System.in);
         int gameChoice = in.nextInt();
 
-        if (gameChoice < 0 || gameChoice >= list.size()) {
+        if (gameChoice < 0 || gameChoice >= games.size()) {
             System.out.println("Wrong choice!");
             System.exit(0);
         }
 
-        Supplier<? extends Game> ctor = list.get(gameChoice);
+        Supplier<? extends Game> ctor = games.get(gameChoice);
         ctor.get().play();
     }
 }

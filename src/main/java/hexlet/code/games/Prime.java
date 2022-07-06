@@ -18,14 +18,13 @@ public final class Prime implements Game {
     private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 
-    private static String checkIsPrime(int value) {
-        String isPrime = "yes";
+    private static boolean checkIsPrime(int value) {
+        boolean isPrime = true;
         int temp;
 
         for (int i = 2; i < value / 2; i++) {
             temp = value % i;
             if (temp == 0) {
-                isPrime = "no";
                 break;
             }
         }
@@ -39,7 +38,7 @@ public final class Prime implements Game {
 
         for (int i = 0; i < GameUtils.ROUNDS; i++) {
             question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            answer = checkIsPrime(question);
+            answer = checkIsPrime(question) ? "yes" : "no";
             gameData.add(new QuestionAnswerPair(Integer.toString(question), answer));
         }
 

@@ -8,8 +8,10 @@ import java.util.Scanner;
 public final class Engine {
     public static void runGame(List<QuestionAnswerPair> gameData, String rules) {
         Scanner in = new Scanner(System.in);
-        boolean success = true;
-        String name = Cli.greetings();
+
+        System.out.print("May I have your name? ");
+        String name = in.nextLine();
+        System.out.printf("Hello, %s! \n", name);
 
         System.out.println(rules);
 
@@ -24,15 +26,12 @@ public final class Engine {
                         pair.getAnswer()
                 );
                 System.out.printf("Let's try again, %s!\n", name);
-                success = false;
-                break;
+                return;
             } else {
                 System.out.println("Correct!");
             }
         }
 
-        if (success) {
-            System.out.printf("Congratulations, %s!\n", name);
-        }
+        System.out.printf("Congratulations, %s!\n", name);
     }
 }

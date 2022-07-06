@@ -20,17 +20,11 @@ public final class Even implements Game {
 
 
     public void play() {
-        int question;
-        String answer;
         List<QuestionAnswerPair> gameData = new ArrayList<>();
 
         for (int i = 0; i < GameUtils.ROUNDS; i++) {
-            question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
-            if (question % 2 == 0) {
-                answer = "yes";
-            } else {
-                answer = "no";
-            }
+            int question = GameUtils.getRandomNumber(MIN_RANGE, MAX_RANGE);
+            String answer = question % 2 == 0 ? "yes" : "no";
             gameData.add(new QuestionAnswerPair(Integer.toString(question), answer));
         }
 
