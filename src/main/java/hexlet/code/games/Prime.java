@@ -25,6 +25,7 @@ public final class Prime implements Game {
         for (int i = 2; i < value / 2; i++) {
             temp = value % i;
             if (temp == 0) {
+                isPrime = false;
                 break;
             }
         }
