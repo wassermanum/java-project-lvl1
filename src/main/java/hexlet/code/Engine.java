@@ -12,7 +12,6 @@ public final class Engine {
         System.out.print("May I have your name? ");
         String name = in.nextLine();
         System.out.printf("Hello, %s! \n", name);
-
         System.out.println(rules);
 
         for (QuestionAnswerPair pair : gameData) {
